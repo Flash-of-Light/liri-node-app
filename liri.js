@@ -1,30 +1,37 @@
 require("dotenv").config();
+var fs = require("fs");
 
-// console.log(process.env.SPOTIFY_ID) 
-// console.log(process.env.SPOTIFY_SECRET)
+fs.readFile("key.js", "utf8", function(error, data) {
 
-// var spotify = new Spotify(keys.spotify);
+    if (error) {
+      return console.log(error);
+    }
+    console.log(process.env.SPOTIFY_ID) 
+    console.log(process.env.SPOTIFY_SECRET)
+});
+
+var spotify = new Spotify(keys.spotify);
 
 var command = process.argv[2];
 var media = process.argv[3];
 
 switch(command) {
-    case 0:
+    case "concert":
         command = "concert-this";
         concert();
         break;
-    case 1:
+    case "spotify":
         command = "spotify-this-song"
         spotify();
         break;
-    case 2:
+    case "movie":
         command = "movie-this"
         movie();
         break;
-    case 3:
+    case "dowhat":
         command = "do-what-it-says"
         doWhat();
-    case 4:
+    case "unrecognized input":
         error();
         break;
 };
@@ -79,3 +86,5 @@ function movie() {
 // function doWhat() {
 
 // };
+
+
