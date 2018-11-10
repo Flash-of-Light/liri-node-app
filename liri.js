@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+var moment = require("moment");
 var keys = require("./key")
 // var random = require("random.txt")
 var fs = require("fs");
@@ -57,11 +57,18 @@ function concert() {
         // console.log(JSON.parse(body).venue);
         // console.log(JSON.parse(datetime))
         // console.log(JSON.parse(body));
-        var concertData = JSON.parse(body);
-        console.log(concertData.venue)
-        console.log(concertData.offers)
-        console.log(concertData.offers.venue)
-        console.log(JSON.parse(body).venue.name);
+        var concertData = JSON.parse(body)[0];
+        console.log("The venue name is " + concertData.venue.name);
+        console.log("The venue city is " + concertData.venue.city);
+        console.log("The venue country is " + concertData.venue.country);
+        console.log("The date of the concert is " + moment(concertData.datetime).format("MM/DD/YYYY"));
+        console.log("--------------------")
+        var concertDataOne = JSON.parse(body)[1];
+        console.log("The venue name is " + concertDataOne.venue.name);
+        console.log("The venue city is " + concertDataOne.venue.city);
+        console.log("The venue country is " + concertDataOne.venue.country);
+        console.log("The date of the concert is " + moment(concertDataOne.datetime).format("MM/DD/YYYY"));
+        
     };
 });
 };
