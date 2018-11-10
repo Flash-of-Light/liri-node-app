@@ -13,13 +13,18 @@ movie-this
 do-what-it-says
 
 concert-this:
+
 specific syntax: node liri.js concert-this (band name here)
+
 This will request information from the bandsintown API and return the venue name, location, and date for upcoming concerts.
 Screenshot of use:
 
 spotify-this-song:
+
 specific syntax: node liri.js spotify-this-song (song name here)
+
 This will request information from the spotify API and return the artist, song name, preview link of the song, and the song's album.
+
 Screenshot of use:
 ![spotify usage]
 
@@ -33,4 +38,5 @@ An example of the information returned for a specific selection.
 ![movie-this with a movie picked](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/movie2.png)
 
 do-what-it-says:
+
 specific syntax:
