@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 var keys = require("./key")
+// var random = require("random.txt")
 var fs = require("fs");
 
 fs.readFile("key.js", "utf8", function(error, data) {
@@ -51,17 +52,25 @@ function concert() {
     request("https://rest.bandsintown.com/artists/" + media + "/events?app_id=codingbootcamp", function(error, response, body) {
     
         // If the request is successful (i.e. if the response status code is 200)
+        //venue name, location, date in MM/DD/YYYY format using moment.js
         if (!error && response.statusCode === 200) {
-        console.log(JSON.parse(body))
+        // console.log(JSON.parse(body).venue);
+        // console.log(JSON.parse(datetime))
+        // console.log(JSON.parse(body));
+        var concertData = JSON.parse(body);
+        console.log(concertData.venue)
+        console.log(concertData.offers)
+        console.log(concertData.offers.venue)
+        console.log(JSON.parse(body).venue.name);
     };
 });
 };
 
 // 2nd Functionality
 // spotify-this-song
-// function spotify() {
-
-// };
+function spotify() {
+    console.log(spotify)
+};
 
 // 3rd Functionality
 // movie-this
@@ -96,8 +105,8 @@ function movie() {
 
 // 4th Functionality
 // do-what-it-says
-// function doWhat() {
-
-// };
+function doWhat() {
+console.log("dowhat");
+};
 
 
