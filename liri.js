@@ -20,7 +20,14 @@ fs.readFile("key.js", "utf8", function(error, data) {
 // var spotify = new Spotify(keys.spotify);
 
 var command = process.argv[2];
-var media = process.argv[3];
+var media;
+    if (process.argv[3] == undefined) {
+        media = 'Mr. Nobody';
+    } 
+    else 
+        media = process.argv[3];
+//split strings with spaces in them and add a + instead to format the search
+media = media.split(' ').join('+');
 
 switch(command) {
     case "concert-this":
@@ -41,7 +48,6 @@ switch(command) {
 function concert() {
     var request = require("request");
 
-    
     request("https://rest.bandsintown.com/artists/" + media + "/events?app_id=codingbootcamp", function(error, response, body) {
     
         // If the request is successful (i.e. if the response status code is 200)
@@ -75,6 +81,7 @@ function movie() {
         console.log("The movie's production country is: " + JSON.parse(body).Country);
         var rottenT = JSON.parse(body).Ratings[1];
         // console.log(Object.entries(rottenT));
+        // console.log(rottenT);
         Object.entries(rottenT).forEach(([key, value]) => {
             console.log("The movie's Rotten Tomatoes rating is: " + `${value}`)});
         // Object.entries(rottenT).forEach(([key, value]) => {
