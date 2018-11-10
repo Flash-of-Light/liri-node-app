@@ -3,9 +3,13 @@
 LIRI (Language Interpretation and Recognition Interface) - an application built using Node.js to return media information based on commands.  It utilizes gitignore, dotenv, moment, spotify, and request.  Specific dependencies include: "dotenv": "^6.1.0", "moment": "^2.22.2", "node-spotify-api": "^1.0.7", and "request": "^2.88.0".
 
 Input commands:
+
 concert-this
+
 spotify-this-song
+
 movie-this
+
 do-what-it-says
 
 concert-this:
