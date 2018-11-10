@@ -1,5 +1,5 @@
 # liri-node-app
 
 
-![alt text](https://github.com/Jay-Goss/liri-node-app/pictures/movie1.png)
-![Front Page](https://github.com/Jay-Goss/liri-node-app/pictures/movie2.png)
+![movie-this with no subject](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/movie1.png)
+![movie-this with a movie picked](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/movie2.png)
