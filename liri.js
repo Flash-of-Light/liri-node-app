@@ -1,9 +1,14 @@
+//all the relevant require connections
 require("dotenv").config();
 var moment = require("moment");
 var keys = require("./key")
-// var random = require("random.txt")
+var request = require('request');
 var fs = require("fs");
+var Spotify = require("node-spotify-api");
+// //this spotify var will be the AP ID key to use in my
+var spotify = new Spotify(keys.spotify);
 
+//allows the spotify keys to be read from another file
 fs.readFile("key.js", "utf8", function(error, data) {
 
     if (error) {
@@ -13,35 +18,31 @@ fs.readFile("key.js", "utf8", function(error, data) {
     // console.log(process.env.SPOTIFY_SECRET)
 });
 
-// function spotify(keys) {
-//   this.keys = keys  
-// }
-
-// //this spotify var will be the AP ID key to use in my
-// var spotify = new Spotify(keys.spotify);
-
+//structure my inputs 
 var command = process.argv[2];
 var media;
     if (process.argv[3] == undefined) {
         media = 'Mr. Nobody';
     } 
     else 
-        media = process.argv[3];
-//split strings with spaces in them and add a + instead to format the search
-media = media.split(' ').join('+');
+        // media = process.argv[3];
+        media = process.argv.slice(3).join(" ");
 
+// my switchboard allocating relevant functions to the correct inputs
 switch(command) {
     case "concert-this":
         concert();
         break;
     case "spotify-this-song":
-        spotify();
+        spotifySearch();
         break;
     case "movie-this":
         movie();
         break;
     case "do-what-it-says":
         doWhat();
+    default:
+        syntaxError();
 };
 
 // 1st Functionality
@@ -62,21 +63,33 @@ function concert() {
         console.log("The venue city is " + concertData.venue.city);
         console.log("The venue country is " + concertData.venue.country);
         console.log("The date of the concert is " + moment(concertData.datetime).format("MM/DD/YYYY"));
-        console.log("--------------------")
+        console.log("-----------------")
         var concertDataOne = JSON.parse(body)[1];
         console.log("The venue name is " + concertDataOne.venue.name);
         console.log("The venue city is " + concertDataOne.venue.city);
         console.log("The venue country is " + concertDataOne.venue.country);
-        console.log("The date of the concert is " + moment(concertDataOne.datetime).format("MM/DD/YYYY"));
-        
+        console.log("The date of the concert is " + moment(concertDataOne.datetime).format("MM/DD/YYYY"));  
     };
 });
 };
 
 // 2nd Functionality
 // spotify-this-song
-function spotify() {
-    console.log(spotify)
+function spotifySearch() {
+    spotify.search({ type: 'track', query: media, limit: 5 }, function(err, data) {
+        if (err) {
+          return console.log('Error occurred: ' + err);
+        }
+       
+        // console.log(data);
+        var spotifyData = (data);
+        // console.log(spotifyData.items);
+        console.log(spotifyData.tracks.items.artist);
+        console.log(spotifyData.tracks.items.album);
+        console.log(spotifyData.tracks.items);
+
+        // console.log(JSON.parse(data)); 
+      });
 };
 
 // 3rd Functionality
@@ -114,6 +127,13 @@ function movie() {
 // do-what-it-says
 function doWhat() {
 console.log("dowhat");
+fs.appendFile("random.txt", actorData + divider, function(err) {
+    if (err) throw err;
+    console.log(actorData);
+  });
 };
 
-
+//syntax error
+function syntaxError() {
+    console.log("That syntax is not supported. Please see the readme.txt.")
+};
