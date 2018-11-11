@@ -45,6 +45,15 @@ An example of the default movie selection Mr. Nobody if no movie name is chosen:
 An example of the information returned for a specific selection:
 ![movie-this with a movie picked](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/movie2.png)
 
+Functionality for multiple-word titles:
+![movie-this with a movie picked](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/movie3.png)
+
 **do-what-it-says**
 
 specific syntax:
+
+**syntax error**
+
+If incorrect syntax is used then this message will display.
+
+![syntax error](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/syntax.png)
