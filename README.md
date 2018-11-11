@@ -15,8 +15,7 @@ do-what-it-says
 ```
 
 **concert-this**
-
-specific syntax: node liri.js concert-this (band name here)
+specific syntax: node liri concert-this (band name here)
 
 This will request information from the bandsintown API and return the venue name, location, and date for upcoming concerts.
 
@@ -24,8 +23,7 @@ An example of the data returned for the rock band U2:
 ![concert-this for U2](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/U2.png)
 
 **spotify-this-song**
-
-specific syntax: node liri.js spotify-this-song (song name here)
+specific syntax: node liri spotify-this-song (song name here)
 
 This will request information from the spotify API and return the artist, song name, preview link of the song, and the song's album.
 
@@ -34,7 +32,7 @@ Screenshot of use:
 
 **movie-this**
 
-specific syntax: node liri.js
+specific syntax: node liri movie-this (insert movie title here)
 
 This will return selected movie information obtained from the OMDB API including movie title, release year, production country, Rotten Tomatoes rating, language, plot, and actors.
 
@@ -55,5 +53,4 @@ specific syntax:
 **syntax error**
 
 If incorrect syntax is used then this message will display.
-
 ![syntax error](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/syntax.png)
