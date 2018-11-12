@@ -30,14 +30,16 @@ specific syntax: node liri spotify-this-song (song name here)
 This will request information from the spotify API and return the artist, song name, preview link of the song, and the song's album.
 
 Screenshot of use:
-![spotify usage]
+![spotify-this-song demonstration for Africa](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/spotify.png)
+
+The song choice will default to The Sign by Ace of Base if no song selection is made.
+![spotify-this-song default selection](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/spotify1.png)
 
 **movie-this**
 
 specific syntax: node liri movie-this (insert movie title here)
 
 This will return selected movie information obtained from the OMDB API including movie title, release year, production country, Rotten Tomatoes rating, language, plot, and actors.
-
 
 An example of the default movie selection Mr. Nobody if no movie name is chosen:
 ![movie-this with no subject](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/movie1.png)
