@@ -45,7 +45,7 @@ An example of the default movie selection Mr. Nobody if no movie name is chosen:
 ![movie-this with no subject](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/movie1.png)
 
 An example of the information returned for a specific selection:
-![movie-this with a movie picked](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/movie2.png)
+![movie-this with a movie picked](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/movie00.png)
 
 Functionality for multiple-word titles:
 ![movie-this with a movie picked](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/movie3.png)
