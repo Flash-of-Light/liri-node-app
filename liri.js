@@ -76,17 +76,24 @@ function concert() {
 // 2nd Functionality
 // spotify-this-song
 function spotifySearch() {
-    spotify.search({ type: 'track', query: media, limit: 5 }, function(err, data) {
+    spotify.search({ type: 'track', query: media, limit: 1 }, function(err, data) {
         if (err) {
           return console.log('Error occurred: ' + err);
         }
-       
-        // console.log(data);
-        var spotifyData = (data);
-        // console.log(spotifyData.items);
-        console.log(spotifyData.tracks.items.artist);
-        console.log(spotifyData.tracks.items.album);
-        console.log(spotifyData.tracks.items);
+        // artist, song name, preview link to spotify, song's album
+        console.log("--------------------------------------");
+        var spotifyData = data;
+        
+        console.log("The song artist is " + spotifyData.tracks.items[0].album.artists[0].name);
+        console.log("The song name is " + spotifyData.tracks.items[0].name);
+        console.log("The spotify URL for the track is " + spotifyData.tracks.items[0].preview_url);
+        console.log("The song album is titled:  " + spotifyData.tracks.items[0].album.name );        
+        
+        // console.log(data.items);
+        // console.log(spotifyData.items[0]);
+        // console.log(spotifyData.tracks.items.artist);
+        // console.log(spotifyData.tracks.items.album);
+        // // console.log(spotifyData.tracks.items);
 
         // console.log(JSON.parse(data)); 
       });
