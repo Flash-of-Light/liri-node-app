@@ -50,7 +50,7 @@ switch(command) {
 
     case "do-what-it-says":
         doWhat();
-        
+
     default:
         syntaxError();
 };
@@ -59,7 +59,7 @@ switch(command) {
 // concert-this
 function concert() {
     var request = require("request");
-
+    
     request("https://rest.bandsintown.com/artists/" + media + "/events?app_id=codingbootcamp", function(error, response, body) {
     
         // If the request is successful (i.e. if the response status code is 200)
@@ -121,19 +121,21 @@ function movie() {
       if (!error && response.statusCode === 200) {
     
         // console.log(JSON.parse(body))
+        console.log("--------------------------------------");
         console.log("The movie's title is: " + JSON.parse(body).Title);
         console.log("The movie's release year is: " + JSON.parse(body).Year);
         console.log("The movie's IMDB rating is: " + JSON.parse(body).imdbRating);
+        console.log("The movie's Rotten Tomatoes rating is: " + JSON.parse(body).Ratings[1].Value);
         console.log("The movie's production country is: " + JSON.parse(body).Country);
-        var rottenT = JSON.parse(body).Ratings[1];
+        // var rottenT = JSON.parse(body).Ratings[1];
         // console.log(Object.entries(rottenT));
         // console.log(rottenT);
-        Object.entries(rottenT).forEach(([key, value]) => {
-            console.log("The movie's Rotten Tomatoes rating is: " + `${value}`)});
+        // Object.entries(rottenT).forEach(([key, value]) => {
+        //     console.log("The movie's Rotten Tomatoes rating is: " + `${value}`)});
         // Object.entries(rottenT).forEach(([key, value]) => {
         //     console.log(`${value}`)});
         // console.log(`The movie's Rotten Tomatoes rating is: ${JSON.parse(body).Ratings[1]}`);
-        console.log("The movie's language is: " + JSON.parse(body).Language);
+        console.log("The movie's language is: " + JSON.parse(body).Language);        
         console.log("The movie's plot is as follows: " + JSON.parse(body).Plot);
         console.log("The movie's actors are " + JSON.parse(body).Actors);
       };
