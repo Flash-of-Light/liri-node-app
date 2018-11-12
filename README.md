@@ -33,7 +33,7 @@ Screenshot of use:
 ![spotify-this-song demonstration for Africa](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/spotify.png)
 
 The song choice will default to The Sign by Ace of Base if no song selection is made.
-![spotify-this-song default selection](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/spotify1.png)
+![spotify-this-song default selection](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/spotify2.png)
 
 **movie-this**
 
