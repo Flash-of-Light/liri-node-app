@@ -21,26 +21,36 @@ fs.readFile("key.js", "utf8", function(error, data) {
 //structure my inputs 
 var command = process.argv[2];
 var media;
-    if (process.argv[3] == undefined) {
-        media = 'Mr. Nobody';
-    } 
-    else 
-        // media = process.argv[3];
-        media = process.argv.slice(3).join(" ");
-
+    
 // my switchboard allocating relevant functions to the correct inputs
 switch(command) {
     case "concert-this":
         concert();
         break;
+
     case "spotify-this-song":
+        if (process.argv[3] == undefined) {
+            media = 'The Sign Ace';
+        } 
+        else 
+        // media = process.argv[3];
+        media = process.argv.slice(3).join(" ");
         spotifySearch();
         break;
+
     case "movie-this":
+        if (process.argv[3] == undefined) {
+            media = 'Mr. Nobody';
+        } 
+        else 
+        // media = process.argv[3];
+        media = process.argv.slice(3).join(" ");
         movie();
         break;
+
     case "do-what-it-says":
         doWhat();
+        
     default:
         syntaxError();
 };
