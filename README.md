@@ -15,6 +15,7 @@ do-what-it-says
 ```
 
 **concert-this**
+
 specific syntax: node liri concert-this (band name here)
 
 This will request information from the bandsintown API and return the venue name, location, and date for upcoming concerts.
@@ -23,6 +24,7 @@ An example of the data returned for the rock band U2:
 ![concert-this for U2](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/U2.png)
 
 **spotify-this-song**
+
 specific syntax: node liri spotify-this-song (song name here)
 
 This will request information from the spotify API and return the artist, song name, preview link of the song, and the song's album.
@@ -48,7 +50,9 @@ Functionality for multiple-word titles:
 
 **do-what-it-says**
 
-specific syntax:
+specific syntax: node liri do-what-it-says
+
+This will run spotify-this-song for the song "I want it that way" and edit the text in the random.txt file.
 
 **syntax error**
 
