@@ -67,7 +67,7 @@ function concert() {
         if (!error && response.statusCode === 200) {
         // console.log(JSON.parse(body).venue);
         // console.log(JSON.parse(datetime))
-        // console.log(JSON.parse(body));
+        console.log(JSON.parse(body));
         var concertData = JSON.parse(body)[0];
         console.log("The venue name is " + concertData.venue.name);
         console.log("The venue city is " + concertData.venue.city);
@@ -109,9 +109,13 @@ function spotifySearch() {
       });
 };
 
+// fs.appendFile("random.txt", "node liri spotify-this-song" + media , function(err) {
+//     if (err) throw err;
+//     console.log(actorData);
+//   });
+
 // 3rd Functionality
 // movie-this
-// var media = ''
 function movie() {
     var request = require("request");
 
@@ -145,11 +149,39 @@ function movie() {
 // 4th Functionality
 // do-what-it-says
 function doWhat() {
-console.log("dowhat");
-fs.appendFile("random.txt", actorData + divider, function(err) {
-    if (err) throw err;
-    console.log(actorData);
-  });
+
+    fs.readFile("random.txt", "utf8", function(error, data) {
+        if (error) {
+          return console.log(error);
+        }
+      
+        var dataArr = data.split(",");
+        // console.log(dataArr);
+        // console.log(dataArr[0]);
+        // console.log(dataArr[1]);
+        media = dataArr[1];
+        // process.argv[2] = dataArr[0]
+        // process.argv[3] = dataArr[1]
+
+        switch(dataArr[0]) {
+            case "concert-this":
+                concert();
+                break;
+
+            case "spotify-this-song":
+                spotifySearch();
+                // console.log("switch works!");
+                break;
+
+            case "movie-this":
+                movie();
+                break;
+
+            default:
+                syntaxError();
+                break;
+        };
+    });
 };
 
 //syntax error
