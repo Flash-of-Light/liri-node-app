@@ -54,7 +54,13 @@ Functionality for multiple-word titles:
 
 specific syntax: node liri do-what-it-says
 
-This will run spotify-this-song for the song "I want it that way" and edit the text in the random.txt file.
+This will read the random.txt file and run whichever command is written within the file.  It will search for the media written after the command.  Editing the text in the random.txt file will change the function accordingly.
+
+Functionality for do-what-it-says in a spotify-this-song search:
+![do-what-it-says #1](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/dowhat.png)
+
+Functionality for do-what-it-says in a movie-this search:
+![do-what-it-says #2](https://github.com/Jay-Goss/liri-node-app/blob/master/pictures/dowhat1.png)
 
 **syntax error**
 
